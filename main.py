@@ -18,7 +18,7 @@ def load_env_data():
 
 
 def prepare_message(profiles):
-    text = "Hello bitches!!!\n" \
+    text = "Hello Малютки!!!\n" \
            "Сегодня {datetime}\n" \
         .format(
             datetime=time.strftime("%a, %d %b %Y %H:%M:%S")
