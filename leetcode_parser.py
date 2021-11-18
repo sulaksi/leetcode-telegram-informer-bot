@@ -32,7 +32,7 @@ def get_profile(username):
         "points": user_data['contributions']['points'],
         "realName": profile['realName'],
         "ranking": profile['ranking'],
-        "total": user_data['submitStats']['totalSubmissionNum'][0]['count'],
+        "total": submissions[0]['count'],
         "easy": submissions[1]['count'],
         "medium": submissions[2]['count'],
         "hard": submissions[3]['count']
