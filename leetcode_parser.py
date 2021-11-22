@@ -25,7 +25,7 @@ def get_profile(username):
     response_data = response.json()['data']
     user_data = response_data['matchedUser']
     profile = user_data['profile']
-    submissions = user_data['submitStats']['totalSubmissionNum']
+    submissions = user_data['submitStats']['acSubmissionNum']
 
     profile = {
         "username": user_data['username'],
