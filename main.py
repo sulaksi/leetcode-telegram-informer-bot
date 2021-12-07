@@ -18,30 +18,37 @@ def load_env_data():
 
 
 def prepare_message(profiles):
-    text = "Hello Малютки!!!\n" \
+    text = "Hello Прогеры!!!\n" \
            "Сегодня {datetime}\n" \
         .format(
             datetime=time.strftime("%a, %d %b %Y %H:%M:%S")
         )
-    max_point = 0
+    max_total = 0
     max_point_user = ''
     for profile in profiles:
-        if int(profile['points']) >= max_point:
-            max_point = int(profile['points'])
+        if int(profile['total']) >= max_total:
+            max_total = int(profile['total'])
             max_point_user = profile['username']
+        # text += f"\n💜{profile['username']}💜" \
+        #         f"\nRanking   🤑: {profile['ranking']}" \
+        #         f"\nPoints   💲: {profile['points']}" \
+        #         f"\nRealname   🛸: {profile['realName']}"  \
+        #         f"\nTotal   🌠: {profile['total']}"   \
+        #         f"\nEasy   🔨: {profile['easy']}"\
+        #         f"\nMedium   ⚒: {profile['medium']}"\
+        #         f"\nHard   ⚔️: {profile['hard']}" \
+        #         "\n🐲🐲🐲" \
+        #         "\n"
+
         text += f"\n💜{profile['username']}💜" \
-                f"\nRanking   🤑: {profile['ranking']}" \
                 f"\nPoints   💲: {profile['points']}" \
-                f"\nRealname   🛸: {profile['realName']}"  \
-                f"\nTotal   🌠: {profile['total']}"   \
-                f"\nEasy   🔨: {profile['easy']}"\
-                f"\nMedium   ⚒: {profile['medium']}"\
-                f"\nHard   ⚔️: {profile['hard']}" \
+                f"\nTotal   🌠: {profile['total']}" \
+                f"\nEasy   🔨: {profile['easy']}" \
                 "\n🐲🐲🐲" \
                 "\n"
-
     text += f"\nToday's king is 🥇: {max_point_user}"
 
+    text += f"\nДавайте, кодим дальше!"
     return text
 
 
@@ -53,7 +60,8 @@ def daily_informer():
     send_message(data['token'], data['channel'], text)
 
 
-daily_informer()
+
+
 schedule.every().day.at("08:00").do(daily_informer)
 schedule.every().day.at("12:00").do(daily_informer)
 schedule.every().day.at("17:00").do(daily_informer)
