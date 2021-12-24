@@ -65,7 +65,7 @@ def daily_informer():
 # schedule.every().day.at("08:00").do(daily_informer)
 schedule.every().day.at("12:00").do(daily_informer)
 schedule.every().day.at("15:00").do(daily_informer)
-schedule.every().day.at("19:25").do(daily_informer)
+schedule.every().day.at("19:27").do(daily_informer)
 schedule.every().day.at("21:00").do(daily_informer)
 # schedule.every().day.at("23:00").do(daily_informer)
 
